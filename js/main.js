@@ -5,6 +5,7 @@ app.controller("mainController", function($scope, $http) {
     $http.get('data/salaries.json').then(function(response){
         $scope.data = response.data;
     })
+    $scope.sortType = "name";
 });
 
 // Define a controller "mainController" for you application, 

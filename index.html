@@ -50,17 +50,17 @@
 						</td>
 						<td>
 							<!-- Add an ng-click event to set the variable sortType equal to 'salary' -->
-							<a ng-click="sortType = 'salary'" href="#">Salary</a>
+							<a ng-click="sortType = '-salary'" href="#">Salary</a>
 						</td>
 					</tr>
 				</thead>
 				<tbody>
 
 					<!-- Create a table row for each person in your data object -->
-					<tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>               
+					<tr ng-repeat="ele in data | orderBy:sortType | filter:search">
+                        <td>{{ele.name}}</td>
+                        <td>{{ele.job_title}}</td>
+                        <td>{{ele.salary | currency:"$":0}}</td>               
                     </tr>
 						
 						<!-- Create 3 <td> elements to display name, job_title, and salary -->
